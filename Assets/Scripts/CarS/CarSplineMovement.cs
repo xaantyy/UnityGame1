@@ -1,25 +1,26 @@
 using UnityEngine;
 using UnityEngine.Splines;
-
+using UnityEngine.Serialization; //сохзранить ссылку
 public class CarSplineMovement : MonoBehaviour
 {
-    public SplineContainer spline;
+    [FormerlySerializedAs("spline")]
+    [SerializeField] private SplineContainer _spline;
     [SerializeField] private float _speed = 10f;
-    public float acceleration = 10f;
-    public float brakePower = 3f;
+    [SerializeField] private float _acceleration = 10f;
+    [SerializeField] private float _brakePower = 2f;
     private bool _shouldStop;
     private bool _stoppedByLight;
     private bool _stoppedByObstacle;
     private bool _stoppedByPedestrian;
     private bool _isInIntersection;
 
-    float currentSpeed = 0f;
-    float t = 0f;
-    float splineLength;
+    private float _currentSpeed = 0f;
+    private float _t = 0f;
+    private float _splineLength;
 
     void Start()
     {
-        splineLength = spline.CalculateLength();
+        _splineLength = _spline.CalculateLength();
     }
 
     void Update()
@@ -41,41 +42,41 @@ public class CarSplineMovement : MonoBehaviour
     {
         if (_shouldStop)
         {
-            currentSpeed = currentSpeed - brakePower * Time.deltaTime;
+            _currentSpeed = _currentSpeed - _acceleration * _brakePower * Time.deltaTime;
 
-            if (currentSpeed < 0f)
+            if (_currentSpeed < 0f)
             {
-                currentSpeed = 0f;
+                _currentSpeed = 0f;
             }
         }
         else
         {
-            currentSpeed = currentSpeed + acceleration * Time.deltaTime;
+            _currentSpeed = _currentSpeed + _acceleration * Time.deltaTime;
 
-            if (currentSpeed > _speed)
+            if (_currentSpeed > _speed)
             {
-                currentSpeed = _speed;
+                _currentSpeed = _speed;
             }
         }
     }
 
     void MoveCar()
     {
-        if (currentSpeed <= 0f)
+        if (_currentSpeed <= 0f)
         {
             return;
         }
 
-        t = t + currentSpeed * Time.deltaTime / splineLength;
+        _t = _t + _currentSpeed * Time.deltaTime / _splineLength;
 
-        if (t > 1f)
+        if (_t > 1f)
         {
-            t = 0f;
+            _t = 0f;
         }
 
-        transform.position = spline.EvaluatePosition(t);
+        transform.position = _spline.EvaluatePosition(_t);
 
-        Vector3 direction = spline.EvaluateTangent(t);
+        Vector3 direction = _spline.EvaluateTangent(_t);
 
         if (direction != Vector3.zero)
         {
@@ -85,21 +86,21 @@ public class CarSplineMovement : MonoBehaviour
 
     public Vector3 GetFutureDirection(float secondsAhead)
     {
-        float futureT = t + currentSpeed * secondsAhead / splineLength;
+        float futureT = _t + _currentSpeed * secondsAhead / _splineLength;
 
         if (futureT > 1f)
         {
             futureT = futureT - 1f;
         }
 
-        Vector3 futureDirection = spline.EvaluateTangent(futureT);
+        Vector3 futureDirection = _spline.EvaluateTangent(futureT);
 
         return futureDirection.normalized;
     }
 
     public float GetStoppingDistance()
     {
-        return currentSpeed * currentSpeed / (2f * brakePower);
+        return _currentSpeed * _currentSpeed / (2f * _brakePower);
     }
 
     public void SetStoppedByObstacle(bool value)
