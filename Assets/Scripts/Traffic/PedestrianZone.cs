@@ -9,20 +9,31 @@ public class PedestrianZone : MonoBehaviour
     [FormerlySerializedAs("crossingEastWestRoad")]
     [SerializeField] private bool _crossingEastWestRoad = true;
     private ScoreManager _scoreManager;
+    private bool _checkPenalty = false;
+
     [Inject]
     public void Construct(ScoreManager scoreManager)
     {
         _scoreManager = scoreManager;
+    }
+    void Update()
+    {
+        if (_checkPenalty == true)
+        {
+            if (_trafficLight.CanWalk(_crossingEastWestRoad) == false)
+            {
+                _scoreManager.RedLightPenalty();
+            }
+
+            _checkPenalty = false;
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (_trafficLight.CanWalk(_crossingEastWestRoad) == false)
-            {
-                _scoreManager.RedLightPenalty();
-            }
+            _checkPenalty = true;
         }
     }
 }

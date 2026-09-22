@@ -3,17 +3,23 @@ using UnityEngine.Splines;
 using UnityEngine.Serialization; //сохзранить ссылку
 public class CarSplineMovement : MonoBehaviour
 {
+    private enum CarState
+    {
+        Driving,
+        StoppedByLight,
+        StoppedByObstacle,
+        StoppedByPedestrian
+    }
+    private CarState _state = CarState.Driving;
     [FormerlySerializedAs("spline")]
     [SerializeField] private SplineContainer _spline;
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float _acceleration = 10f;
     [SerializeField] private float _brakePower = 2f;
-    private bool _shouldStop;
     private bool _stoppedByLight;
     private bool _stoppedByObstacle;
     private bool _stoppedByPedestrian;
     private bool _isInIntersection;
-
     private float _currentSpeed = 0f;
     private float _t = 0f;
     private float _splineLength;
@@ -25,22 +31,14 @@ public class CarSplineMovement : MonoBehaviour
 
     void Update()
     {
-        CheckStop();
+        UpdateState();
         ChangeSpeed();
         MoveCar();
     }
 
-    void CheckStop()
-    {
-        _shouldStop =
-            _stoppedByLight ||
-            _stoppedByObstacle ||
-            _stoppedByPedestrian;
-    }
-
     void ChangeSpeed()
     {
-        if (_shouldStop)
+        if (_state != CarState.Driving)
         {
             _currentSpeed = _currentSpeed - _acceleration * _brakePower * Time.deltaTime;
 
@@ -124,5 +122,25 @@ public class CarSplineMovement : MonoBehaviour
     public bool GetIsInIntersection()
     {
         return _isInIntersection;
+    }
+
+    void UpdateState()
+    {
+        if (_stoppedByPedestrian == true)
+        {
+            _state = CarState.StoppedByPedestrian;
+        }
+        else if (_stoppedByObstacle == true)
+        {
+            _state = CarState.StoppedByObstacle;
+        }
+        else if (_stoppedByLight == true)
+        {
+            _state = CarState.StoppedByLight;
+        }
+        else
+        {
+            _state = CarState.Driving;
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -6,21 +7,32 @@ public class CarCrosswalkStopZone : MonoBehaviour
     [FormerlySerializedAs("crossing")]
     [SerializeField] private UncontrolledCrossing _crossing;
 
-    void OnTriggerStay(Collider other)
+    private List<CarSplineMovement> _cars =
+        new List<CarSplineMovement>();
+
+    void Update()
+    {
+        for (int i = 0; i < _cars.Count; i++)
+        {
+            if (_crossing.GetCarsMustStop() == true)
+            {
+                _cars[i].SetStoppedByPedestrian(true);
+            }
+            else
+            {
+                _cars[i].SetStoppedByPedestrian(false);
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
     {
         CarSplineMovement car =
             other.GetComponentInParent<CarSplineMovement>();
 
-        if (car != null)
+        if (car != null && _cars.Contains(car) == false)
         {
-            if (_crossing.GetCarsMustStop() == true)
-            {
-                car.SetStoppedByPedestrian(true);
-            }
-            else
-            {
-                car.SetStoppedByPedestrian(false);
-            }
+            _cars.Add(car);
         }
     }
 
@@ -32,6 +44,7 @@ public class CarCrosswalkStopZone : MonoBehaviour
         if (car != null)
         {
             car.SetStoppedByPedestrian(false);
+            _cars.Remove(car);
         }
     }
 }
