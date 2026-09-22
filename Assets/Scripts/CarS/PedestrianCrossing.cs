@@ -2,38 +2,44 @@ using UnityEngine;
 
 public class PedestrianCrossing : MonoBehaviour
 {
-    private CarSplineMovement car;
-    private bool playerInZone = false;
+    private CarSplineMovement _car;
+    private bool _playerInZone = false;
 
     void OnTriggerEnter(Collider other)
     {
         CarSplineMovement foundCar = other.GetComponentInParent<CarSplineMovement>();
+
         if (foundCar != null)
         {
-            car = foundCar;
+            _car = foundCar;
         }
 
-        PlayerMovement player = other.GetComponentInParent<PlayerMovement>();
+        PlayerMovement player =
+            other.GetComponentInParent<PlayerMovement>();
+
         if (player != null)
         {
-            playerInZone = true;
+            _playerInZone = true;
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        PlayerMovement player = other.GetComponentInParent<PlayerMovement>();
+        PlayerMovement player =
+            other.GetComponentInParent<PlayerMovement>();
+
         if (player != null)
         {
-            playerInZone = false;
+            _playerInZone = false;
         }
     }
 
     void Update()
     {
-        if (car == null)
+        if (_car == null)
+        {
             return;
-
-        car.SetStoppedByPedestrian(playerInZone);
+        }
+        _car.SetStoppedByPedestrian(_playerInZone);
     }
 }

@@ -3,54 +3,43 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int score = 100;
-    public TextMeshProUGUI scoreText;
+    [SerializeField] private int _score = 100;
+    [SerializeField] private TextMeshProUGUI _scoreText;
+
     void Start()
     {
-        scoreText.text = "очки: " + score;
+        UpdateScoreText();
     }
 
     public void RedLightPenalty()
     {
-        score = score - 10;
-
-        if (score < 0)
-        {
-            score = 0;
-        }
-        scoreText.text = "очки: " + score;
+        AddPenalty(10);
     }
 
     public void RoadPenalty()
     {
-        score = score - 15;
-
-        if (score < 0)
-        {
-            score = 0;
-        }
-        scoreText.text = "очки: " + score;
-    }
-
-    public void AddPenalty(int amount)
-    {
-        score = score - amount;
-
-        if (score < 0)
-        {
-            score = 0;
-        }
-        scoreText.text = "очки: " + score;
+        AddPenalty(15);
     }
 
     public void CrashPenalty()
     {
-        score = score - 25;
+        AddPenalty(25);
+    }
 
-        if (score < 0)
+    public void AddPenalty(int amount)
+    {
+        _score = _score - amount;
+
+        if (_score < 0)
         {
-            score = 0;
+            _score = 0;
         }
-        scoreText.text = "очки: " + score;
+
+        UpdateScoreText();
+    }
+
+    void UpdateScoreText()
+    {
+        _scoreText.text = "очки: " + _score;
     }
 }

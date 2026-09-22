@@ -2,23 +2,22 @@ using UnityEngine;
 
 public class FinishZone : MonoBehaviour
 {
-    public GameCycleManager gameCycleManager;
-    public bool isPointA = true;
+    [SerializeField] private GameCycleManager _gameCycleManager;
+    [SerializeField] private bool _isPointA = true;
 
     void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(gameCycleManager.finishIsB);
         if (!other.CompareTag("Player"))
             return;
 
-        if (isPointA && !gameCycleManager.finishIsB)
+        if (_isPointA && !_gameCycleManager.GetFinishIsB())
         {
-            gameCycleManager.OnPlayerReachedFinish();
+            _gameCycleManager.OnPlayerReachedFinish();
         }
 
-        if (!isPointA && gameCycleManager.finishIsB)
+        if (!_isPointA && _gameCycleManager.GetFinishIsB())
         {
-            gameCycleManager.OnPlayerReachedFinish();
+            _gameCycleManager.OnPlayerReachedFinish();
         }
     }
 }

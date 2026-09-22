@@ -1,23 +1,29 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TrafficStopZone : MonoBehaviour
 {
-    public TrafficLightController trafficLight;
-    public bool goesEastWest;
+    [FormerlySerializedAs("trafficLight")]
+    [SerializeField] private TrafficLightController _trafficLight;
 
-    private CarSplineMovement car;
+    [FormerlySerializedAs("goesEastWest")]
+    [SerializeField] private bool _goesEastWest;
+
+    private CarSplineMovement _car;
 
     void OnTriggerStay(Collider other)
     {
         if (other.isTrigger == true)
+        {
             return;
+        }
 
         CarSplineMovement foundCar =
             other.GetComponentInParent<CarSplineMovement>();
 
         if (foundCar != null)
         {
-            car = foundCar;
+            _car = foundCar;
         }
     }
 
@@ -26,25 +32,27 @@ public class TrafficStopZone : MonoBehaviour
         CarSplineMovement foundCar =
             other.GetComponentInParent<CarSplineMovement>();
 
-        if (foundCar != null && foundCar == car)
+        if (foundCar != null && foundCar == _car)
         {
-            car.SetStoppedByLight(false);
-            car = null;
+            _car.SetStoppedByLight(false);
+            _car = null;
         }
     }
 
     void Update()
     {
-        if (car == null)
-            return;
-
-        if (trafficLight.CanDrive(goesEastWest) == false)
+        if (_car == null)
         {
-            car.SetStoppedByLight(true);
+            return;
+        }
+
+        if (_trafficLight.CanDrive(_goesEastWest) == false)
+        {
+            _car.SetStoppedByLight(true);
         }
         else
         {
-            car.SetStoppedByLight(false);
+            _car.SetStoppedByLight(false);
         }
     }
 }

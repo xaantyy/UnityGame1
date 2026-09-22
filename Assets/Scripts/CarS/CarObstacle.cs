@@ -1,31 +1,31 @@
 using UnityEngine;
 public class CarObstacle : MonoBehaviour
 {
-    CarSplineMovement myCar;
-    float timer = 0f;
+    private CarSplineMovement _myCar;
+    private float _timer = 0f;
     void Start()
     {
-        myCar = GetComponentInParent<CarSplineMovement>();
+        _myCar = GetComponentInParent<CarSplineMovement>();
     }
 
     void Update()
     {
-        if (myCar.GetIsInIntersection() == true)
+        if (_myCar.GetIsInIntersection() == true)
         {
-            myCar.SetStoppedByObstacle(false);
-            timer = 0f;
+            _myCar.SetStoppedByObstacle(false);
+            _timer = 0f;
             return;
         }
 
-        timer = timer - Time.deltaTime;
+        _timer = _timer - Time.deltaTime;
 
-        if (timer > 0f)
+        if (_timer > 0f)
         {
-            myCar.SetStoppedByObstacle(true);
+            _myCar.SetStoppedByObstacle(true);
         }
         else
         {
-            myCar.SetStoppedByObstacle(false);
+            _myCar.SetStoppedByObstacle(false);
         }
     }
 
@@ -36,9 +36,9 @@ public class CarObstacle : MonoBehaviour
             CarSplineMovement otherCar =
                 other.GetComponentInParent<CarSplineMovement>();
 
-            if (otherCar != null && otherCar != myCar)
+            if (otherCar != null && otherCar != _myCar)
             {
-                timer = 0.3f;
+                _timer = 0.3f;
             }
         }
     }

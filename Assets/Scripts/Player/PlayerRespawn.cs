@@ -1,23 +1,27 @@
 using UnityEngine;
 using Zenject;
+
 public class PlayerRespawn : MonoBehaviour
 {
-    public Transform[] safeZones;
+    [SerializeField] private Transform[] _safeZones;
     private ScoreManager _scoreManager;
+    private CharacterController _controller;
+
     [Inject]
     public void Construct(ScoreManager scoreManager)
     {
         _scoreManager = scoreManager;
     }
-    CharacterController controller;
+
     void Start()
     {
-        controller = GetComponent<CharacterController>();
+        _controller = GetComponent<CharacterController>();
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        CarSplineMovement car = hit.collider.GetComponentInParent<CarSplineMovement>();
+        CarSplineMovement car =
+            hit.collider.GetComponentInParent<CarSplineMovement>();
 
         if (car != null)
         {
@@ -28,23 +32,23 @@ public class PlayerRespawn : MonoBehaviour
 
     void Respawn()
     {
-        Transform nearestZone = safeZones[0];
+        Transform nearestZone = _safeZones[0];
 
-        for (int i = 0; i < safeZones.Length; i++)
+        for (int i = 0; i < _safeZones.Length; i++)
         {
             float distanceToZone =
-                Vector3.Distance(transform.position, safeZones[i].position);
+                Vector3.Distance(transform.position, _safeZones[i].position);
 
             float distanceToNearest =
                 Vector3.Distance(transform.position, nearestZone.position);
 
             if (distanceToZone < distanceToNearest)
             {
-                nearestZone = safeZones[i];
+                nearestZone = _safeZones[i];
             }
         }
-        controller.enabled = false;
+        _controller.enabled = false;
         transform.position = nearestZone.position;
-        controller.enabled = true;
+        _controller.enabled = true;
     }
 }

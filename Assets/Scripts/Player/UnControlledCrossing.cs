@@ -1,32 +1,35 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class UncontrolledCrossing : MonoBehaviour
 {
-    public bool playerStopped = false;
-    public bool carsMustStop = false;
-    public float stopTime = 5f;
+    [FormerlySerializedAs("stopTime")]
+    [SerializeField] private float _stopTime = 5f;
 
-    float timer = 0f;
+    [FormerlySerializedAs("cars")]
+    [SerializeField] private CarSplineMovement[] _cars;
 
-    public CarSplineMovement[] cars;
+    private bool _playerStopped = false;
+    private bool _carsMustStop = false;
+    private float _timer = 0f;
 
     void Update()
     {
-        if (carsMustStop == true)
+        if (_carsMustStop == true)
         {
-            timer = timer + Time.deltaTime;
+            _timer = _timer + Time.deltaTime;
 
-            if (timer >= stopTime)
+            if (_timer >= _stopTime)
             {
-                carsMustStop = false;
-                playerStopped = false;
-                timer = 0f;
+                _carsMustStop = false;
+                _playerStopped = false;
+                _timer = 0f;
 
-                for (int i = 0; i < cars.Length; i++)
+                for (int i = 0; i < _cars.Length; i++)
                 {
-                    if (cars[i] != null)
+                    if (_cars[i] != null)
                     {
-                        cars[i].SetStoppedByPedestrian(false);
+                        _cars[i].SetStoppedByPedestrian(false);
                     }
                 }
             }
@@ -35,11 +38,21 @@ public class UncontrolledCrossing : MonoBehaviour
 
     public void StopCars()
     {
-        if (carsMustStop == false)
+        if (_carsMustStop == false)
         {
-            playerStopped = true;
-            carsMustStop = true;
-            timer = 0f;
+            _playerStopped = true;
+            _carsMustStop = true;
+            _timer = 0f;
         }
+    }
+
+    public bool GetPlayerStopped()
+    {
+        return _playerStopped;
+    }
+
+    public bool GetCarsMustStop()
+    {
+        return _carsMustStop;
     }
 }

@@ -2,23 +2,24 @@ using UnityEngine;
 
 public class TrafficLightController : MonoBehaviour
 {
-    public GameObject trafficLightEastWest;
-    public GameObject trafficLightEastWest2;
-    public GameObject trafficLightSouthNorth;
-    public GameObject trafficLightSouthNorth2;
-    public float greenTime = 10f;
-    public float yellowTime = 3f;
-    public float allRedTime = 9f;
-    float timer = 0f;
-    int currentLight = 0;
-    public GameObject pedestrianLightNorth;
-    public GameObject pedestrianLightSouth;
-    public GameObject pedestrianLightEast;
-    public GameObject pedestrianLightWest;
+    [SerializeField] private Renderer _trafficLightEastWest;
+    [SerializeField] private Renderer _trafficLightEastWest2;
+    [SerializeField] private Renderer _trafficLightSouthNorth;
+    [SerializeField] private Renderer _trafficLightSouthNorth2;
+    [SerializeField] private float _greenTime = 10f;
+    [SerializeField] private float _yellowTime = 3f;
+    [SerializeField] private float _allRedTime = 9f;
+    [SerializeField] private Renderer _pedestrianLightNorth;
+    [SerializeField] private Renderer _pedestrianLightSouth;
+    [SerializeField] private Renderer _pedestrianLightEast;
+    [SerializeField] private Renderer _pedestrianLightWest;
+    private float _timer = 0f;
+    private int _currentLight = 0;
 
     void Start()
     {
-        timer = Random.Range(0f, greenTime);
+        _timer = Random.Range(0f, _greenTime);
+
         SetEastWestColor(Color.green);
         SetSouthNorthColor(Color.red);
         SetPedestrianColors();
@@ -26,67 +27,79 @@ public class TrafficLightController : MonoBehaviour
 
     void Update()
     {
-        timer = timer + Time.deltaTime;
+        _timer = _timer + Time.deltaTime;
 
-        if (currentLight == 0)
+        if (_currentLight == 0)
         {
-            if (timer >= greenTime)
+            if (_timer >= _greenTime)
             {
                 SetEastWestColor(Color.yellow);
-                currentLight = 1;
-                timer = 0f;
+
+                _currentLight = 1;
+                _timer = 0f;
+
                 SetPedestrianColors();
             }
         }
-        else if (currentLight == 1)
+        else if (_currentLight == 1)
         {
-            if (timer >= yellowTime)
+            if (_timer >= _yellowTime)
             {
                 SetEastWestColor(Color.red);
                 SetSouthNorthColor(Color.red);
-                currentLight = 4;
-                timer = 0f;
+
+                _currentLight = 4;
+                _timer = 0f;
+
                 SetPedestrianColors();
             }
         }
-        else if (currentLight == 4)
+        else if (_currentLight == 4)
         {
-            if (timer >= allRedTime)
+            if (_timer >= _allRedTime)
             {
                 SetSouthNorthColor(Color.green);
-                currentLight = 2;
-                timer = 0f;
+
+                _currentLight = 2;
+                _timer = 0f;
+
                 SetPedestrianColors();
             }
         }
-        else if (currentLight == 2)
+        else if (_currentLight == 2)
         {
-            if (timer >= greenTime)
+            if (_timer >= _greenTime)
             {
                 SetSouthNorthColor(Color.yellow);
-                currentLight = 3;
-                timer = 0f;
+
+                _currentLight = 3;
+                _timer = 0f;
+
                 SetPedestrianColors();
             }
         }
-        else if (currentLight == 3)
+        else if (_currentLight == 3)
         {
-            if (timer >= yellowTime)
+            if (_timer >= _yellowTime)
             {
                 SetSouthNorthColor(Color.red);
                 SetEastWestColor(Color.red);
-                currentLight = 5;
-                timer = 0f;
+
+                _currentLight = 5;
+                _timer = 0f;
+
                 SetPedestrianColors();
             }
         }
-        else if (currentLight == 5)
+        else if (_currentLight == 5)
         {
-            if (timer >= allRedTime)
+            if (_timer >= _allRedTime)
             {
                 SetEastWestColor(Color.green);
-                currentLight = 0;
-                timer = 0f;
+
+                _currentLight = 0;
+                _timer = 0f;
+
                 SetPedestrianColors();
             }
         }
@@ -94,39 +107,21 @@ public class TrafficLightController : MonoBehaviour
 
     void SetEastWestColor(Color color)
     {
-        if (trafficLightEastWest != null)
-        {
-            Renderer lightRenderer = trafficLightEastWest.GetComponent<Renderer>();
-            lightRenderer.material.color = color;
-        }
-
-        if (trafficLightEastWest2 != null)
-        {
-            Renderer lightRenderer2 = trafficLightEastWest2.GetComponent<Renderer>();
-            lightRenderer2.material.color = color;
-        }
+        SetColor(_trafficLightEastWest, color);
+        SetColor(_trafficLightEastWest2, color);
     }
 
     void SetSouthNorthColor(Color color)
     {
-        if (trafficLightSouthNorth != null)
-        {
-            Renderer lightRenderer = trafficLightSouthNorth.GetComponent<Renderer>();
-            lightRenderer.material.color = color;
-        }
-
-        if (trafficLightSouthNorth2 != null)
-        {
-            Renderer lightRenderer2 = trafficLightSouthNorth2.GetComponent<Renderer>();
-            lightRenderer2.material.color = color;
-        }
+        SetColor(_trafficLightSouthNorth, color);
+        SetColor(_trafficLightSouthNorth2, color);
     }
 
     public bool CanDrive(bool eastWest)
     {
         if (eastWest == true)
         {
-            if (currentLight == 0 || currentLight == 1)
+            if (_currentLight == 0 || _currentLight == 1)
             {
                 return true;
             }
@@ -134,17 +129,18 @@ public class TrafficLightController : MonoBehaviour
 
         if (eastWest == false)
         {
-            if (currentLight == 2 || currentLight == 3)
+            if (_currentLight == 2 || _currentLight == 3)
             {
                 return true;
             }
         }
+
         return false;
     }
 
     public bool CanWalk(bool crossingEastWestRoad)
     {
-        if (currentLight == 4 || currentLight == 5)
+        if (_currentLight == 4 || _currentLight == 5)
         {
             return true;
         }
@@ -158,25 +154,24 @@ public class TrafficLightController : MonoBehaviour
     {
         if (CanWalk(true) == true)
         {
-            SetColor(pedestrianLightNorth, Color.green);
-            SetColor(pedestrianLightSouth, Color.green);
-            SetColor(pedestrianLightEast, Color.green);
-            SetColor(pedestrianLightWest, Color.green);
+            SetColor(_pedestrianLightNorth, Color.green);
+            SetColor(_pedestrianLightSouth, Color.green);
+            SetColor(_pedestrianLightEast, Color.green);
+            SetColor(_pedestrianLightWest, Color.green);
         }
         else
         {
-            SetColor(pedestrianLightNorth, Color.red);
-            SetColor(pedestrianLightSouth, Color.red);
-            SetColor(pedestrianLightEast, Color.red);
-            SetColor(pedestrianLightWest, Color.red);
+            SetColor(_pedestrianLightNorth, Color.red);
+            SetColor(_pedestrianLightSouth, Color.red);
+            SetColor(_pedestrianLightEast, Color.red);
+            SetColor(_pedestrianLightWest, Color.red);
         }
     }
 
-    void SetColor(GameObject obj, Color color)
+    void SetColor(Renderer lightRenderer, Color color)
     {
-        if (obj != null)
+        if (lightRenderer != null)
         {
-            Renderer lightRenderer = obj.GetComponent<Renderer>();
             lightRenderer.material.color = color;
         }
     }

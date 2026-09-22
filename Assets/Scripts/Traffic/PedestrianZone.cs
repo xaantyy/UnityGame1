@@ -1,12 +1,14 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 public class PedestrianZone : MonoBehaviour
 {
-    public TrafficLightController trafficLight;
-    public bool crossingEastWestRoad = true;
+    [FormerlySerializedAs("trafficLight")]
+    [SerializeField] private TrafficLightController _trafficLight;
+    [FormerlySerializedAs("crossingEastWestRoad")]
+    [SerializeField] private bool _crossingEastWestRoad = true;
     private ScoreManager _scoreManager;
-
     [Inject]
     public void Construct(ScoreManager scoreManager)
     {
@@ -17,7 +19,7 @@ public class PedestrianZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (trafficLight.CanWalk(crossingEastWestRoad) == false)
+            if (_trafficLight.CanWalk(_crossingEastWestRoad) == false)
             {
                 _scoreManager.RedLightPenalty();
             }

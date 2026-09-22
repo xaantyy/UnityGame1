@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CarCrosswalkStopZone : MonoBehaviour
 {
-    public UncontrolledCrossing crossing;
+    [FormerlySerializedAs("crossing")]
+    [SerializeField] private UncontrolledCrossing _crossing;
 
     void OnTriggerStay(Collider other)
     {
-        CarSplineMovement car = other.GetComponentInParent<CarSplineMovement>();
+        CarSplineMovement car =
+            other.GetComponentInParent<CarSplineMovement>();
 
         if (car != null)
         {
-            if (crossing.carsMustStop == true)
+            if (_crossing.GetCarsMustStop() == true)
             {
                 car.SetStoppedByPedestrian(true);
             }
@@ -23,7 +26,8 @@ public class CarCrosswalkStopZone : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        CarSplineMovement car = other.GetComponentInParent<CarSplineMovement>();
+        CarSplineMovement car =
+            other.GetComponentInParent<CarSplineMovement>();
 
         if (car != null)
         {

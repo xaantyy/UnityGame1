@@ -2,45 +2,52 @@ using UnityEngine;
 
 public class GameCycleManager : MonoBehaviour
 {
-    public Transform pointA;
-    public Transform pointB;
-    public Transform player;
-    public GameObject markerA;
-    public GameObject markerB;
-    public bool finishIsB = true;
-    CharacterController controller;
+    [SerializeField] private Transform _pointA;
+    [SerializeField] private Transform _pointB;
+    [SerializeField] private Transform _player;
+    [SerializeField] private GameObject _markerA;
+    [SerializeField] private GameObject _markerB;
+    [SerializeField] private bool _finishIsB = true;
+    private CharacterController _controller;
 
     void Start()
     {
-        controller = player.GetComponent<CharacterController>();
+        _controller = _player.GetComponent<CharacterController>();
         MovePlayerToSpawn();
         UpdateMarkers();
     }
 
     void MovePlayerToSpawn()
     {
-        controller.enabled = false;
+        _controller.enabled = false;
 
-        if (finishIsB)
+        if (_finishIsB)
         {
-            player.position = pointA.position;
+            _player.position = _pointA.position;
         }
         else
         {
-            player.position = pointB.position;
+            _player.position = _pointB.position;
         }
-
-        controller.enabled = true;
+        _controller.enabled = true;
     }
+
     void UpdateMarkers()
     {
-        markerA.SetActive(!finishIsB);
-        markerB.SetActive(finishIsB);
+        _markerA.SetActive(!_finishIsB);
+        _markerB.SetActive(_finishIsB);
     }
+
     public void OnPlayerReachedFinish()
     {
-        finishIsB = !finishIsB;
+        _finishIsB = !_finishIsB;
+
         MovePlayerToSpawn();
         UpdateMarkers();
+    }
+
+    public bool GetFinishIsB()
+    {
+        return _finishIsB;
     }
 }

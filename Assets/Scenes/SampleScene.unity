@@ -185,7 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &5037798 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4683045588902123913, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -4015,8 +4014,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 831022790}
-  crossingEastWestRoad: 0
+  _trafficLight: {fileID: 831022790}
+  _crossingEastWestRoad: 0
 --- !u!65 &66334415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4164,8 +4163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 1761874491}
-  crossingEastWestRoad: 1
+  _trafficLight: {fileID: 1761874491}
+  _crossingEastWestRoad: 1
 --- !u!65 &74051330
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4327,8 +4326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 831022790}
-  goesEastWest: 1
+  _trafficLight: {fileID: 831022790}
+  _goesEastWest: 1
 --- !u!65 &96945704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4469,11 +4468,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbeb2da2014e8c49946a8282855a5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledCrossing
-  playerStopped: 0
-  carsMustStop: 0
-  stopTime: 5
-  cars:
-  - {fileID: 0}
+  _stopTime: 5
+  _cars:
+  - {fileID: 2049204586}
   - {fileID: 1700859742}
   - {fileID: 0}
   - {fileID: 0}
@@ -4481,11 +4478,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 543121132}
-  - {fileID: 0}
+  - {fileID: 1003831157}
   - {fileID: 1031621996}
   - {fileID: 692531943}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2112955108}
+  - {fileID: 979726176}
   - {fileID: 0}
   - {fileID: 1265817792}
 --- !u!1 &97892639
@@ -7675,7 +7672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 1864277992}
+  _crossing: {fileID: 1864277992}
 --- !u!65 &113982945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7840,8 +7837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 969939392}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 969939392}
 --- !u!65 &121317758
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8132,7 +8128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 969939392}
+  _crossing: {fileID: 969939392}
 --- !u!65 &144224968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8253,8 +8249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 638291547}
-  crossingEastWestRoad: 1
+  _trafficLight: {fileID: 638291547}
+  _crossingEastWestRoad: 1
 --- !u!65 &146977755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8963,7 +8959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 495166665}
+  _crossing: {fileID: 495166665}
 --- !u!65 &152136846
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9051,7 +9047,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &155604937
 GameObject:
   m_ObjectHideFlags: 0
@@ -9118,7 +9113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &156742595 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4244345539263738681, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -9734,17 +9728,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655f53cbb947f38449698c7eb6730393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficLightController
-  trafficLightEastWest: {fileID: 1614745507}
-  trafficLightEastWest2: {fileID: 971020005}
-  trafficLightSouthNorth: {fileID: 1867923876}
-  trafficLightSouthNorth2: {fileID: 873988053}
-  greenTime: 10
-  yellowTime: 3
-  allRedTime: 10
-  pedestrianLightNorth: {fileID: 1760913447}
-  pedestrianLightSouth: {fileID: 202929165}
-  pedestrianLightEast: {fileID: 1863724160}
-  pedestrianLightWest: {fileID: 1308867224}
+  _trafficLightEastWest: {fileID: 1614745509}
+  _trafficLightEastWest2: {fileID: 971020009}
+  _trafficLightSouthNorth: {fileID: 1867923879}
+  _trafficLightSouthNorth2: {fileID: 873988057}
+  _greenTime: 10
+  _yellowTime: 3
+  _allRedTime: 9
+  _pedestrianLightNorth: {fileID: 1760913451}
+  _pedestrianLightSouth: {fileID: 202929169}
+  _pedestrianLightEast: {fileID: 1863724164}
+  _pedestrianLightWest: {fileID: 1308867227}
 --- !u!4 &197548728
 Transform:
   m_ObjectHideFlags: 0
@@ -10079,7 +10073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 1864277992}
+  _crossing: {fileID: 1864277992}
 --- !u!65 &227197911
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10248,7 +10242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &242798075
 GameObject:
   m_ObjectHideFlags: 0
@@ -10294,7 +10287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 1641879644}
+  _crossing: {fileID: 1641879644}
 --- !u!65 &242798078
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10981,7 +10974,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &255407186
 GameObject:
   m_ObjectHideFlags: 0
@@ -11027,8 +11019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 1641879644}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 1641879644}
 --- !u!65 &255407189
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11095,8 +11086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 1864277992}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 1864277992}
 --- !u!65 &259692922
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11150,8 +11140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 1761874491}
-  goesEastWest: 0
+  _trafficLight: {fileID: 1761874491}
+  _goesEastWest: 0
 --- !u!65 &269179174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11400,8 +11390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e5087c0923bf1458e57f89a95a6f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinishZone
-  gameCycleManager: {fileID: 313179988}
-  isPointA: 0
+  _gameCycleManager: {fileID: 313179988}
+  _isPointA: 0
 --- !u!65 &281354211
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12728,7 +12718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &310531004 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6238172714847950606, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -12802,12 +12791,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1085b5d4303e3a4a9039c534dd3d3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameCycleManager
-  pointA: {fileID: 830497128}
-  pointB: {fileID: 281354209}
-  player: {fileID: 794643658}
-  markerA: {fileID: 830497127}
-  markerB: {fileID: 281354208}
-  finishIsB: 1
+  _pointA: {fileID: 830497128}
+  _pointB: {fileID: 281354209}
+  _player: {fileID: 794643658}
+  _markerA: {fileID: 2043129120}
+  _markerB: {fileID: 1082562860}
+  _finishIsB: 1
 --- !u!1 &314204396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1704259213629741961, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -13023,8 +13012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 1761874491}
-  crossingEastWestRoad: 1
+  _trafficLight: {fileID: 1761874491}
+  _crossingEastWestRoad: 1
 --- !u!65 &343184146
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13228,7 +13217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &370803468
 GameObject:
   m_ObjectHideFlags: 0
@@ -14430,8 +14418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 638291547}
-  goesEastWest: 0
+  _trafficLight: {fileID: 638291547}
+  _goesEastWest: 0
 --- !u!65 &371406469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14746,8 +14734,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 638291547}
-  goesEastWest: 1
+  _trafficLight: {fileID: 638291547}
+  _goesEastWest: 1
 --- !u!65 &398120943
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14886,7 +14874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 969939392}
+  _crossing: {fileID: 969939392}
 --- !u!65 &401128007
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15034,8 +15022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 1663352099}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 1663352099}
 --- !u!65 &411559033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15134,8 +15121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff9c62ad798b1f4a8a2de5cf0b6834a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
-  score: 100
-  scoreText: {fileID: 0}
+  _score: 100
+  _scoreText: {fileID: 413183304}
 --- !u!114 &413183304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15528,8 +15515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 197548727}
-  goesEastWest: 0
+  _trafficLight: {fileID: 197548727}
+  _goesEastWest: 0
 --- !u!65 &446028696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15987,7 +15974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 495166665}
+  _crossing: {fileID: 495166665}
 --- !u!65 &477836159
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16259,8 +16246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 1761874491}
-  crossingEastWestRoad: 0
+  _trafficLight: {fileID: 1761874491}
+  _crossingEastWestRoad: 0
 --- !u!65 &494942335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16329,11 +16316,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbeb2da2014e8c49946a8282855a5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledCrossing
-  playerStopped: 0
-  carsMustStop: 0
-  stopTime: 5
-  cars:
-  - {fileID: 0}
+  _stopTime: 5
+  _cars:
+  - {fileID: 2049204586}
   - {fileID: 1700859742}
   - {fileID: 0}
   - {fileID: 0}
@@ -16341,11 +16326,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 543121132}
-  - {fileID: 0}
+  - {fileID: 1003831157}
   - {fileID: 1031621996}
   - {fileID: 692531943}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2112955108}
+  - {fileID: 979726176}
   - {fileID: 0}
   - {fileID: 1265817792}
 --- !u!1 &497551958 stripped
@@ -16536,7 +16521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 97778625}
+  _crossing: {fileID: 97778625}
 --- !u!65 &514512233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17327,8 +17312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 1641879644}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 1641879644}
 --- !u!65 &524248832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17503,7 +17487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 495166665}
+  _crossing: {fileID: 495166665}
 --- !u!65 &541566988
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17569,15 +17553,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953381a1a16d5d746bb82f0f8611ceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSplineMovement
-  spline: {fileID: 247788739}
-  speed: 10
-  acceleration: 10
-  brakePower: 14
-  shouldStop: 0
-  stoppedByLight: 0
-  stoppedByObstacle: 0
-  stoppedByPedestrian: 0
-  isInIntersection: 0
+  _spline: {fileID: 247788739}
+  _speed: 10
+  _acceleration: 10
+  _brakePower: 1.6
 --- !u!54 &543121133
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17697,7 +17676,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &549383096 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5684191134488440363, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -18036,8 +18014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 97778625}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 97778625}
 --- !u!65 &563831821
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18263,8 +18240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 831022790}
-  crossingEastWestRoad: 0
+  _trafficLight: {fileID: 831022790}
+  _crossingEastWestRoad: 0
 --- !u!65 &568935668
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18764,7 +18741,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &607282843 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6785099287264572217, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -18858,7 +18834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &612112215 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7592927127431298561, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -18958,7 +18933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 97778625}
+  _crossing: {fileID: 97778625}
 --- !u!65 &618320639
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19052,8 +19027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 495166665}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 495166665}
 --- !u!65 &625606457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19185,17 +19159,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655f53cbb947f38449698c7eb6730393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficLightController
-  trafficLightEastWest: {fileID: 1040961491}
-  trafficLightEastWest2: {fileID: 398120941}
-  trafficLightSouthNorth: {fileID: 371406467}
-  trafficLightSouthNorth2: {fileID: 2137849478}
-  greenTime: 10
-  yellowTime: 3
-  allRedTime: 10
-  pedestrianLightNorth: {fileID: 906425297}
-  pedestrianLightSouth: {fileID: 1013627289}
-  pedestrianLightEast: {fileID: 1443778829}
-  pedestrianLightWest: {fileID: 1433864784}
+  _trafficLightEastWest: {fileID: 1040961494}
+  _trafficLightEastWest2: {fileID: 398120944}
+  _trafficLightSouthNorth: {fileID: 371406470}
+  _trafficLightSouthNorth2: {fileID: 2137849481}
+  _greenTime: 10
+  _yellowTime: 3
+  _allRedTime: 9
+  _pedestrianLightNorth: {fileID: 906425300}
+  _pedestrianLightSouth: {fileID: 1013627292}
+  _pedestrianLightEast: {fileID: 1443778832}
+  _pedestrianLightWest: {fileID: 1433864787}
 --- !u!4 &638291548
 Transform:
   m_ObjectHideFlags: 0
@@ -19358,7 +19332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &646783484 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6720651586904759211, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -19566,7 +19539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 1641879644}
+  _crossing: {fileID: 1641879644}
 --- !u!65 &658048039
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19659,17 +19632,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655f53cbb947f38449698c7eb6730393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficLightController
-  trafficLightEastWest: {fileID: 2075998713}
-  trafficLightEastWest2: {fileID: 2075998713}
-  trafficLightSouthNorth: {fileID: 446028694}
-  trafficLightSouthNorth2: {fileID: 1240489905}
-  greenTime: 10
-  yellowTime: 3
-  allRedTime: 10
-  pedestrianLightNorth: {fileID: 910741350}
-  pedestrianLightSouth: {fileID: 188673750}
-  pedestrianLightEast: {fileID: 1444610602}
-  pedestrianLightWest: {fileID: 491653482}
+  _trafficLightEastWest: {fileID: 2075998716}
+  _trafficLightEastWest2: {fileID: 0}
+  _trafficLightSouthNorth: {fileID: 446028697}
+  _trafficLightSouthNorth2: {fileID: 1240489909}
+  _greenTime: 10
+  _yellowTime: 3
+  _allRedTime: 9
+  _pedestrianLightNorth: {fileID: 910741353}
+  _pedestrianLightSouth: {fileID: 188673753}
+  _pedestrianLightEast: {fileID: 1444610605}
+  _pedestrianLightWest: {fileID: 491653485}
 --- !u!1 &661206492
 GameObject:
   m_ObjectHideFlags: 0
@@ -19736,7 +19709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &661597614
 GameObject:
   m_ObjectHideFlags: 0
@@ -20655,7 +20627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 969939392}
+  _crossing: {fileID: 969939392}
 --- !u!65 &667241981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20997,8 +20969,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 658484764}
-  crossingEastWestRoad: 1
+  _trafficLight: {fileID: 658484764}
+  _crossingEastWestRoad: 1
 --- !u!65 &688970431
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21064,15 +21036,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953381a1a16d5d746bb82f0f8611ceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarMovement
-  spline: {fileID: 523148867}
-  speed: 10
-  acceleration: 10
-  brakePower: 14
-  shouldStop: 0
-  stoppedByLight: 0
-  stoppedByObstacle: 0
-  stoppedByPedestrian: 0
-  isInIntersection: 0
+  _spline: {fileID: 523148867}
+  _speed: 10
+  _acceleration: 10
+  _brakePower: 1.6
 --- !u!65 &692531946
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21198,8 +21165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 638291547}
-  crossingEastWestRoad: 0
+  _trafficLight: {fileID: 638291547}
+  _crossingEastWestRoad: 0
 --- !u!65 &697512761
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24378,8 +24345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 1761874491}
-  goesEastWest: 1
+  _trafficLight: {fileID: 1761874491}
+  _goesEastWest: 1
 --- !u!65 &720317220
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24787,7 +24754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 1663352099}
+  _crossing: {fileID: 1663352099}
 --- !u!65 &743057191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24956,7 +24923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &764240136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4658017198924622745, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -25065,8 +25031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 97778625}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 97778625}
 --- !u!65 &776471344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25267,7 +25232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 1864277992}
+  _crossing: {fileID: 1864277992}
 --- !u!65 &782937676
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25334,7 +25299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 97778625}
+  _crossing: {fileID: 97778625}
 --- !u!65 &787765876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25415,11 +25380,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c559230e9146f19439b6508ef03641b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 7
-  minX: -35
-  maxX: 84
-  minZ: -14
-  maxZ: 99
+  _speed: 28
+  _minX: -35
+  _maxX: 81
+  _minZ: -16.5
+  _maxZ: 130
 --- !u!143 &794643657
 CharacterController:
   m_ObjectHideFlags: 0
@@ -25498,7 +25463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd7260dd5e1d2749904f81de6098ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerRespawn
-  safeZones:
+  _safeZones:
+  - {fileID: 97892640}
   - {fileID: 1579544822}
   - {fileID: 579861146}
   - {fileID: 687943713}
@@ -25506,7 +25472,6 @@ MonoBehaviour:
   - {fileID: 1473605734}
   - {fileID: 890749508}
   - {fileID: 1088919397}
-  scoreManager: {fileID: 867013241}
 --- !u!1 &796100979 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5522298655557942482, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -25606,7 +25571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 97778625}
+  _crossing: {fileID: 97778625}
 --- !u!65 &802808031
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25781,7 +25746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 1641879644}
+  _crossing: {fileID: 1641879644}
 --- !u!65 &825555211
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25904,8 +25869,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e5087c0923bf1458e57f89a95a6f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinishZone
-  gameCycleManager: {fileID: 313179988}
-  isPointA: 1
+  _gameCycleManager: {fileID: 313179988}
+  _isPointA: 1
 --- !u!65 &830497130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26020,17 +25985,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655f53cbb947f38449698c7eb6730393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficLightController
-  trafficLightEastWest: {fileID: 96945702}
-  trafficLightEastWest2: {fileID: 1624624973}
-  trafficLightSouthNorth: {fileID: 2017119609}
-  trafficLightSouthNorth2: {fileID: 1792693034}
-  greenTime: 10
-  yellowTime: 3
-  allRedTime: 10
-  pedestrianLightNorth: {fileID: 1850583733}
-  pedestrianLightSouth: {fileID: 159935581}
-  pedestrianLightEast: {fileID: 724084154}
-  pedestrianLightWest: {fileID: 1083027350}
+  _trafficLightEastWest: {fileID: 96945705}
+  _trafficLightEastWest2: {fileID: 1624624976}
+  _trafficLightSouthNorth: {fileID: 2017119612}
+  _trafficLightSouthNorth2: {fileID: 1792693038}
+  _greenTime: 10
+  _yellowTime: 3
+  _allRedTime: 9
+  _pedestrianLightNorth: {fileID: 1850583737}
+  _pedestrianLightSouth: {fileID: 159935585}
+  _pedestrianLightEast: {fileID: 724084158}
+  _pedestrianLightWest: {fileID: 1083027354}
 --- !u!1 &832940421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1345117844197441107, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -26138,8 +26103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 1663352099}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 1663352099}
 --- !u!65 &842090131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26314,7 +26278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 495166665}
+  _crossing: {fileID: 495166665}
 --- !u!65 &848836338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26489,7 +26453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 1864277992}
+  _crossing: {fileID: 1864277992}
 --- !u!65 &858804169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26556,8 +26520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 97778625}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 97778625}
 --- !u!65 &859175491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26717,8 +26680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff9c62ad798b1f4a8a2de5cf0b6834a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
-  score: 100
-  scoreText: {fileID: 413183304}
+  _score: 100
+  _scoreText: {fileID: 413183304}
 --- !u!1 &873046713 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6865252156644542004, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -26793,8 +26756,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 197548727}
-  goesEastWest: 0
+  _trafficLight: {fileID: 197548727}
+  _goesEastWest: 0
 --- !u!65 &873988056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26945,7 +26908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 495166665}
+  _crossing: {fileID: 495166665}
 --- !u!65 &875779527
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27254,7 +27217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 1663352099}
+  _crossing: {fileID: 1663352099}
 --- !u!65 &886138293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28585,7 +28548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 1663352099}
+  _crossing: {fileID: 1663352099}
 --- !u!65 &898200193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28978,7 +28941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &922578837 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2521292274988993828, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -29369,7 +29331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &960891539 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 795629962304674250, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -29471,24 +29432,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbeb2da2014e8c49946a8282855a5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledCrossing
-  playerStopped: 0
-  carsMustStop: 0
-  stopTime: 5
-  cars:
+  _stopTime: 5
+  _cars:
   - {fileID: 0}
   - {fileID: 1700859742}
+  - {fileID: 2049204586}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2112955108}
   - {fileID: 543121132}
-  - {fileID: 0}
+  - {fileID: 1003831157}
   - {fileID: 1031621996}
   - {fileID: 692531943}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 979726176}
   - {fileID: 1265817792}
 --- !u!1 &970651375 stripped
 GameObject:
@@ -29564,8 +29523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 197548727}
-  goesEastWest: 1
+  _trafficLight: {fileID: 197548727}
+  _goesEastWest: 1
 --- !u!65 &971020008
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29737,7 +29696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &979726174 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3081706244853798624, guid: 11622008e4a9b2b4bb83932ba28732ee, type: 3}
@@ -29760,15 +29718,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953381a1a16d5d746bb82f0f8611ceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSplineMovement
-  spline: {fileID: 25561215}
-  speed: 10
-  acceleration: 10
-  brakePower: 14
-  shouldStop: 0
-  stoppedByLight: 0
-  stoppedByObstacle: 0
-  stoppedByPedestrian: 0
-  isInIntersection: 0
+  _spline: {fileID: 25561215}
+  _speed: 10
+  _acceleration: 10
+  _brakePower: 1.6
 --- !u!54 &979726177
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29910,7 +29863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &993446794 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 20221576921363816, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -30139,15 +30091,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953381a1a16d5d746bb82f0f8611ceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSplineMovement
-  spline: {fileID: 1305429624}
-  speed: 10
-  acceleration: 10
-  brakePower: 14
-  shouldStop: 0
-  stoppedByLight: 0
-  stoppedByObstacle: 0
-  stoppedByPedestrian: 0
-  isInIntersection: 0
+  _spline: {fileID: 1305429624}
+  _speed: 10
+  _acceleration: 10
+  _brakePower: 1.6
 --- !u!54 &1003831159
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30327,8 +30274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 197548727}
-  crossingEastWestRoad: 1
+  _trafficLight: {fileID: 197548727}
+  _crossingEastWestRoad: 1
 --- !u!65 &1005256922
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30444,7 +30391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 97778625}
+  _crossing: {fileID: 97778625}
 --- !u!65 &1006979303
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30816,7 +30763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 1663352099}
+  _crossing: {fileID: 1663352099}
 --- !u!65 &1019129882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30914,7 +30861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 1663352099}
+  _crossing: {fileID: 1663352099}
 --- !u!65 &1026749918
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31006,15 +30953,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953381a1a16d5d746bb82f0f8611ceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSplineMovement
-  spline: {fileID: 2092203103}
-  speed: 10
-  acceleration: 10
-  brakePower: 14
-  shouldStop: 0
-  stoppedByLight: 0
-  stoppedByObstacle: 0
-  stoppedByPedestrian: 0
-  isInIntersection: 0
+  _spline: {fileID: 2092203103}
+  _speed: 10
+  _acceleration: 10
+  _brakePower: 1.6
 --- !u!1 &1040961491
 GameObject:
   m_ObjectHideFlags: 0
@@ -31047,8 +30989,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 638291547}
-  goesEastWest: 1
+  _trafficLight: {fileID: 638291547}
+  _goesEastWest: 1
 --- !u!65 &1040961493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31214,7 +31156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 1864277992}
+  _crossing: {fileID: 1864277992}
 --- !u!65 &1042321796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31526,8 +31468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 831022790}
-  crossingEastWestRoad: 1
+  _trafficLight: {fileID: 831022790}
+  _crossingEastWestRoad: 1
 --- !u!65 &1057686847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31621,7 +31563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 1864277992}
+  _crossing: {fileID: 1864277992}
 --- !u!65 &1067076401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32191,8 +32133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 197548727}
-  crossingEastWestRoad: 0
+  _trafficLight: {fileID: 197548727}
+  _crossingEastWestRoad: 0
 --- !u!65 &1108864363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32376,8 +32318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 831022790}
-  crossingEastWestRoad: 1
+  _trafficLight: {fileID: 831022790}
+  _crossingEastWestRoad: 1
 --- !u!65 &1133599224
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34536,7 +34478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1183564073 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9150840214073524861, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -34596,8 +34537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 1761874491}
-  goesEastWest: 1
+  _trafficLight: {fileID: 1761874491}
+  _goesEastWest: 1
 --- !u!65 &1185777376
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34898,7 +34839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 97778625}
+  _crossing: {fileID: 97778625}
 --- !u!65 &1215471348
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34986,7 +34927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1221857647 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2568470042017465640, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -35169,8 +35109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 197548727}
-  goesEastWest: 0
+  _trafficLight: {fileID: 197548727}
+  _goesEastWest: 0
 --- !u!65 &1240489908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35342,7 +35282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1249420395
 GameObject:
   m_ObjectHideFlags: 0
@@ -35449,7 +35388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 97778625}
+  _crossing: {fileID: 97778625}
 --- !u!65 &1256579561
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35488,15 +35427,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953381a1a16d5d746bb82f0f8611ceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSplineMovement
-  spline: {fileID: 7925174}
-  speed: 10
-  acceleration: 10
-  brakePower: 14
-  shouldStop: 0
-  stoppedByLight: 0
-  stoppedByObstacle: 0
-  stoppedByPedestrian: 0
-  isInIntersection: 0
+  _spline: {fileID: 7925174}
+  _speed: 10
+  _acceleration: 10
+  _brakePower: 1.6
 --- !u!65 &1265817794
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35643,7 +35577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1271224132 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4518722688201774655, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -35791,7 +35724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1284345335 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5176903787710965934, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -35912,7 +35844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1288721971
 GameObject:
   m_ObjectHideFlags: 0
@@ -37881,8 +37812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 1864277992}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 1864277992}
 --- !u!65 &1313836455
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38356,7 +38286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1358342348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6324305345809942920, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -39449,8 +39378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 97778625}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 97778625}
 --- !u!65 &1393177597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39544,8 +39472,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 197548727}
-  crossingEastWestRoad: 0
+  _trafficLight: {fileID: 197548727}
+  _crossingEastWestRoad: 0
 --- !u!65 &1400764618
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39668,8 +39596,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 1761874491}
-  goesEastWest: 0
+  _trafficLight: {fileID: 1761874491}
+  _goesEastWest: 0
 --- !u!65 &1404699636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39841,7 +39769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1417091874
 GameObject:
   m_ObjectHideFlags: 0
@@ -40384,8 +40311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 658484764}
-  crossingEastWestRoad: 0
+  _trafficLight: {fileID: 658484764}
+  _crossingEastWestRoad: 0
 --- !u!65 &1436862083
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42918,8 +42845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 1641879644}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 1641879644}
 --- !u!65 &1474324471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43067,7 +42993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 495166665}
+  _crossing: {fileID: 495166665}
 --- !u!65 &1480770209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43460,7 +43386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1490103061 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3553376136606613049, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -43533,7 +43458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 969939392}
+  _crossing: {fileID: 969939392}
 --- !u!65 &1503065685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43882,7 +43807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 1641879644}
+  _crossing: {fileID: 1641879644}
 --- !u!65 &1523259524
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44003,8 +43928,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 658484764}
-  crossingEastWestRoad: 0
+  _trafficLight: {fileID: 658484764}
+  _crossingEastWestRoad: 0
 --- !u!65 &1528858015
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44098,8 +44023,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 638291547}
-  crossingEastWestRoad: 0
+  _trafficLight: {fileID: 638291547}
+  _crossingEastWestRoad: 0
 --- !u!65 &1540250318
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44273,7 +44198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 1663352099}
+  _crossing: {fileID: 1663352099}
 --- !u!65 &1557118357
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44399,7 +44324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 1864277992}
+  _crossing: {fileID: 1864277992}
 --- !u!65 &1565164562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45419,7 +45344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1588029955
 GameObject:
   m_ObjectHideFlags: 0
@@ -46305,7 +46229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1607690083 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3218808505872996198, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -46747,8 +46670,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 197548727}
-  goesEastWest: 1
+  _trafficLight: {fileID: 197548727}
+  _goesEastWest: 1
 --- !u!65 &1614745513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46850,8 +46773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 495166665}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 495166665}
 --- !u!65 &1617741875
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47092,7 +47014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 97778625}
+  _crossing: {fileID: 97778625}
 --- !u!65 &1624133202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47146,8 +47068,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 831022790}
-  goesEastWest: 1
+  _trafficLight: {fileID: 831022790}
+  _goesEastWest: 1
 --- !u!65 &1624624975
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48554,11 +48476,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbeb2da2014e8c49946a8282855a5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledCrossing
-  playerStopped: 0
-  carsMustStop: 0
-  stopTime: 5
-  cars:
-  - {fileID: 0}
+  _stopTime: 5
+  _cars:
+  - {fileID: 2049204586}
   - {fileID: 1700859742}
   - {fileID: 0}
   - {fileID: 0}
@@ -48566,11 +48486,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 543121132}
-  - {fileID: 0}
+  - {fileID: 1003831157}
   - {fileID: 1031621996}
   - {fileID: 692531943}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2112955108}
+  - {fileID: 979726176}
   - {fileID: 0}
   - {fileID: 1265817792}
 --- !u!1 &1646889268 stripped
@@ -48777,11 +48697,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbeb2da2014e8c49946a8282855a5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledCrossing
-  playerStopped: 0
-  carsMustStop: 0
-  stopTime: 5
-  cars:
-  - {fileID: 0}
+  _stopTime: 5
+  _cars:
+  - {fileID: 2049204586}
   - {fileID: 1700859742}
   - {fileID: 0}
   - {fileID: 0}
@@ -48789,11 +48707,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 543121132}
-  - {fileID: 0}
+  - {fileID: 1003831157}
   - {fileID: 1031621996}
   - {fileID: 692531943}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2112955108}
+  - {fileID: 979726176}
   - {fileID: 0}
   - {fileID: 1265817792}
 --- !u!1 &1664633297
@@ -48862,7 +48780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1665252977
 GameObject:
   m_ObjectHideFlags: 0
@@ -49358,7 +49275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 1663352099}
+  _crossing: {fileID: 1663352099}
 --- !u!65 &1693611360
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49425,7 +49342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 1641879644}
+  _crossing: {fileID: 1641879644}
 --- !u!65 &1698688415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49464,15 +49381,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953381a1a16d5d746bb82f0f8611ceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSplineMovement
-  spline: {fileID: 1288721973}
-  speed: 10
-  acceleration: 10
-  brakePower: 14
-  shouldStop: 0
-  stoppedByLight: 0
-  stoppedByObstacle: 0
-  stoppedByPedestrian: 0
-  isInIntersection: 0
+  _spline: {fileID: 1288721973}
+  _speed: 10
+  _acceleration: 10
+  _brakePower: 1.6
 --- !u!54 &1700859744
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -49707,7 +49619,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1718355349 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6183515389724070669, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -49991,8 +49902,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 638291547}
-  crossingEastWestRoad: 1
+  _trafficLight: {fileID: 638291547}
+  _crossingEastWestRoad: 1
 --- !u!65 &1750568025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50059,8 +49970,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 197548727}
-  crossingEastWestRoad: 1
+  _trafficLight: {fileID: 197548727}
+  _crossingEastWestRoad: 1
 --- !u!65 &1752150075
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50292,17 +50203,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655f53cbb947f38449698c7eb6730393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficLightController
-  trafficLightEastWest: {fileID: 720317218}
-  trafficLightEastWest2: {fileID: 1185777374}
-  trafficLightSouthNorth: {fileID: 269179172}
-  trafficLightSouthNorth2: {fileID: 1404699633}
-  greenTime: 10
-  yellowTime: 3
-  allRedTime: 10
-  pedestrianLightNorth: {fileID: 1486422684}
-  pedestrianLightSouth: {fileID: 576021782}
-  pedestrianLightEast: {fileID: 1485190883}
-  pedestrianLightWest: {fileID: 1015160296}
+  _trafficLightEastWest: {fileID: 720317221}
+  _trafficLightEastWest2: {fileID: 1185777377}
+  _trafficLightSouthNorth: {fileID: 269179175}
+  _trafficLightSouthNorth2: {fileID: 1404699637}
+  _greenTime: 10
+  _yellowTime: 3
+  _allRedTime: 9
+  _pedestrianLightNorth: {fileID: 1486422687}
+  _pedestrianLightSouth: {fileID: 576021785}
+  _pedestrianLightEast: {fileID: 1485190886}
+  _pedestrianLightWest: {fileID: 1015160299}
 --- !u!1 &1763204158 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4799088203857157959, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -50464,8 +50375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 969939392}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 969939392}
 --- !u!65 &1777433515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50664,8 +50574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 831022790}
-  goesEastWest: 0
+  _trafficLight: {fileID: 831022790}
+  _goesEastWest: 0
 --- !u!65 &1792693037
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50816,7 +50726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 969939392}
+  _crossing: {fileID: 969939392}
 --- !u!65 &1807266842
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51262,7 +51172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &1839933748 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5435106928893878745, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -51384,7 +51293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 1641879644}
+  _crossing: {fileID: 1641879644}
 --- !u!65 &1845366822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58732,8 +58641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 495166665}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 495166665}
 --- !u!65 &1850397131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59168,11 +59076,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbeb2da2014e8c49946a8282855a5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledCrossing
-  playerStopped: 0
-  carsMustStop: 0
-  stopTime: 5
-  cars:
-  - {fileID: 0}
+  _stopTime: 5
+  _cars:
+  - {fileID: 2049204586}
   - {fileID: 1700859742}
   - {fileID: 0}
   - {fileID: 0}
@@ -59180,11 +59086,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 543121132}
-  - {fileID: 0}
+  - {fileID: 1003831157}
   - {fileID: 1031621996}
   - {fileID: 692531943}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2112955108}
+  - {fileID: 979726176}
   - {fileID: 0}
   - {fileID: 1265817792}
 --- !u!1 &1866749606 stripped
@@ -59345,8 +59251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 197548727}
-  goesEastWest: 0
+  _trafficLight: {fileID: 197548727}
+  _goesEastWest: 0
 --- !u!65 &1867923882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59668,7 +59574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 969939392}
+  _crossing: {fileID: 969939392}
 --- !u!65 &1888648508
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60065,7 +59971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 1641879644}
+  _crossing: {fileID: 1641879644}
 --- !u!65 &1917147285
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60356,8 +60262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612aa4138b0b4c540ab1f00ca4807a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PedestrianZone
-  trafficLight: {fileID: 1761874491}
-  crossingEastWestRoad: 0
+  _trafficLight: {fileID: 1761874491}
+  _crossingEastWestRoad: 0
 --- !u!65 &1951938877
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60424,8 +60330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 1864277992}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 1864277992}
 --- !u!65 &1952032314
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60920,7 +60825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &2011812056
 GameObject:
   m_ObjectHideFlags: 0
@@ -60966,7 +60870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 1641879644}
+  _crossing: {fileID: 1641879644}
 --- !u!65 &2011812059
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61140,8 +61044,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 831022790}
-  goesEastWest: 0
+  _trafficLight: {fileID: 831022790}
+  _goesEastWest: 0
 --- !u!65 &2017119611
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61617,15 +61521,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953381a1a16d5d746bb82f0f8611ceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSplineMovement
-  spline: {fileID: 150988465}
-  speed: 10
-  acceleration: 10
-  brakePower: 14
-  shouldStop: 0
-  stoppedByLight: 0
-  stoppedByObstacle: 0
-  stoppedByPedestrian: 0
-  isInIntersection: 0
+  _spline: {fileID: 150988465}
+  _speed: 10
+  _acceleration: 10
+  _brakePower: 1.6
 --- !u!1 &2050466465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7082251686614315479, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -61725,8 +61624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 969939392}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 969939392}
 --- !u!65 &2052974724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61814,7 +61712,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &2054008197
 GameObject:
   m_ObjectHideFlags: 0
@@ -62058,8 +61955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40ec1c72d5a27048b42c9a401264a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledZebraZone
-  crossing: {fileID: 1663352099}
-  scoreManager: {fileID: 867013241}
+  _crossing: {fileID: 1663352099}
 --- !u!65 &2068211404
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62113,8 +62009,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 197548727}
-  goesEastWest: 1
+  _trafficLight: {fileID: 197548727}
+  _goesEastWest: 1
 --- !u!65 &2075998715
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63601,7 +63497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &2105063764 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3927146401394514900, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -63700,15 +63595,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953381a1a16d5d746bb82f0f8611ceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSplineMovement
-  spline: {fileID: 13234592}
-  speed: 10
-  acceleration: 10
-  brakePower: 14
-  shouldStop: 0
-  stoppedByLight: 0
-  stoppedByObstacle: 0
-  stoppedByPedestrian: 0
-  isInIntersection: 0
+  _spline: {fileID: 13234592}
+  _speed: 10
+  _acceleration: 10
+  _brakePower: 1.6
 --- !u!54 &2112955109
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -63834,7 +63724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61110c3b4b1ba84caba82fbeb650a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UncontrolledWaitZone
-  crossing: {fileID: 969939392}
+  _crossing: {fileID: 969939392}
 --- !u!65 &2117358259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63986,7 +63876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d805d67a3350bb4d9d79855b3dea14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenaltyZone
-  scoreManager: {fileID: 867013241}
 --- !u!1 &2124134470 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2242743810520861190, guid: 711bca12f8388764fbf913a5e2004a1d, type: 3}
@@ -64200,7 +64089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7da419458e7b149a4e616bdc559284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarCrosswalkStopZone
-  crossing: {fileID: 495166665}
+  _crossing: {fileID: 495166665}
 --- !u!65 &2132188111
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64254,8 +64143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accf0e91911b4db41a3584d29704aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrafficStopZone
-  trafficLight: {fileID: 638291547}
-  goesEastWest: 0
+  _trafficLight: {fileID: 638291547}
+  _goesEastWest: 0
 --- !u!65 &2137849480
 BoxCollider:
   m_ObjectHideFlags: 0

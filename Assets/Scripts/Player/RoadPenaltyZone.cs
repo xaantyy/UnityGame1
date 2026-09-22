@@ -8,17 +8,17 @@ public class PenaltyZone : MonoBehaviour
     {
         _scoreManager = scoreManager;
     }
-    float timer = 0f;
+    private float _timer = 0f;
     void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            timer = timer + Time.deltaTime;
+            _timer = _timer + Time.deltaTime;
 
-            if (timer >= 1f)
+            if (_timer >= 1f)
             {
                 _scoreManager.AddPenalty(7);
-                timer = 0f;
+                _timer = 0f;
             }
         }
     }
@@ -27,7 +27,7 @@ public class PenaltyZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            timer = 0f;
+            _timer = 0f;
         }
     }
 }

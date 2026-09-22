@@ -1,33 +1,46 @@
 using UnityEngine;
+using UnityEngine.Serialization;
+using Zenject;
 
 public class UncontrolledWaitZone : MonoBehaviour
 {
-    public UncontrolledCrossing crossing;
-    float timer = 0f;
-    bool used = false;
+    [FormerlySerializedAs("crossing")]
+    [SerializeField] private UncontrolledCrossing _crossing;
+
+    private InputService _inputService;
+    private float _timer = 0f;
+    private bool _used = false;
+
+    [Inject]
+    public void Construct(InputService inputService)
+    {
+        _inputService = inputService;
+    }
 
     void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (used == true)
+            if (_used == true)
             {
                 return;
             }
 
-            if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+            Vector2 input = _inputService.GetMoveDirection();
+
+            if (input == Vector2.zero)
             {
-                timer = timer + Time.deltaTime;
+                _timer = _timer + Time.deltaTime;
             }
             else
             {
-                timer = 0f;
+                _timer = 0f;
             }
 
-            if (timer >= 0.5f)
+            if (_timer >= 0.5f)
             {
-                crossing.StopCars();
-                used = true;
+                _crossing.StopCars();
+                _used = true;
             }
         }
     }
@@ -36,8 +49,8 @@ public class UncontrolledWaitZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            timer = 0f;
-            used = false;
+            _timer = 0f;
+            _used = false;
         }
     }
 }
