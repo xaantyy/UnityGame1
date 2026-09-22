@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Zenject;
@@ -6,42 +8,21 @@ public class UncontrolledWaitZone : MonoBehaviour
 {
     [FormerlySerializedAs("crossing")]
     [SerializeField] private UncontrolledCrossing _crossing;
-
     private InputService _inputService;
-    private float _timer = 0f;
+    private bool _playerInZone = false;
     private bool _used = false;
-
     [Inject]
     public void Construct(InputService inputService)
     {
         _inputService = inputService;
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (_used == true)
-            {
-                return;
-            }
-
-            Vector2 input = _inputService.GetMoveDirection();
-
-            if (input == Vector2.zero)
-            {
-                _timer = _timer + Time.deltaTime;
-            }
-            else
-            {
-                _timer = 0f;
-            }
-
-            if (_timer >= 0.5f)
-            {
-                _crossing.StopCars();
-                _used = true;
-            }
+            _playerInZone = true;
+            WaitForStop().Forget();
         }
     }
 
@@ -49,8 +30,32 @@ public class UncontrolledWaitZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            _timer = 0f;
+            _playerInZone = false;
             _used = false;
+        }
+    }
+
+    async UniTask WaitForStop()
+    {
+        while (_playerInZone == true && _used == false)
+        {
+            await UniTask.WaitUntil(() =>
+                _inputService.GetMoveDirection() == Vector2.zero ||
+                _playerInZone == false);
+
+            if (_playerInZone == false)
+            {
+                return;
+            }
+
+            await UniTask.Delay(500);
+
+            if (_inputService.GetMoveDirection() == Vector2.zero &&
+                _playerInZone == true)
+            {
+                _crossing.StopCars();
+                _used = true;
+            }
         }
     }
 }
